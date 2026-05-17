@@ -7,7 +7,7 @@
 const PORTFOLIO = {
 
   // Path to your resume PDF — place the file at assets/resume.pdf
-  resumeUrl: 'assets/resume.pdf',
+  resumeUrl: 'resume.html',
 
   // ── Personal Info ──────────────────────────────────────────
   personal: {

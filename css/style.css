@@ -245,14 +245,7 @@ a:focus-visible {
   border-radius: var(--radius-lg); border: 3px solid var(--surface);
   box-shadow: var(--shadow-md); position: relative; z-index: 1;
 }
-.hero-fallback {
-  width: 100%; aspect-ratio: 4/5;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--accent-pale), var(--surface2));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 5rem; position: relative; z-index: 1;
-  border: 3px solid var(--surface); box-shadow: var(--shadow-md);
-}
+/* see below */
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(20px); }
@@ -609,4 +602,24 @@ footer {
   .skills-grid            { grid-template-columns: 1fr; }
   .services-grid          { grid-template-columns: 1fr; }
   .footer-inner           { flex-direction: column; text-align: center; }
+}
+
+/* ── Avatar initials fallback (shows AM when photo missing) ── */
+.hero-fallback {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--accent-pale), #c7d2fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-disp);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+  border: 3px solid var(--surface);
+  box-shadow: var(--shadow-md);
+  letter-spacing: -0.02em;
 }

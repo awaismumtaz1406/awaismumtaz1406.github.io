@@ -48,7 +48,7 @@
      NAV
      ══════════════════════════════════════════════════════════ */
   $('nav-resume').href = resumeUrl;
-  $('nav-resume').setAttribute('download', 'Awais_Mumtaz_Resume.pdf');
+  // resume.html opens as a page - no download attr needed
 
   /* ══════════════════════════════════════════════════════════
      HERO
@@ -59,7 +59,7 @@
   // Action buttons
   const acts = $('hero-actions');
 
-  const dlBtn = mkA('btn btn-primary', resumeUrl, '&#x2193; Download Resume', null, 'Awais_Mumtaz_Resume.pdf');
+  const dlBtn = mkA('btn btn-primary', resumeUrl, '&#x2193; View Resume', '_blank');
   dlBtn.setAttribute('aria-label', 'Download resume as PDF');
   acts.appendChild(dlBtn);
 
@@ -345,8 +345,8 @@
     cl.appendChild(mkA('btn btn-dark-out', s.url, s.label + ' &#x2192;', '_blank'));
   });
 
-  const ctaResume = mkA('btn btn-dark-out', resumeUrl, '&#x2193; Resume PDF', null, 'Awais_Mumtaz_Resume.pdf');
-  ctaResume.setAttribute('aria-label', 'Download resume PDF');
+  const ctaResume = mkA('btn btn-dark-out', resumeUrl, '&#x2193; View Resume', '_blank');
+  ctaResume.setAttribute('aria-label', 'Open resume page');
   cl.appendChild(ctaResume);
 
   /* ══════════════════════════════════════════════════════════

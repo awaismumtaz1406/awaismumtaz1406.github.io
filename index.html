@@ -37,8 +37,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a id="nav-resume"
-         href="assets/resume.pdf"
-         download="Awais_Mumtaz_Resume.pdf"
+         href="resume.html"
          class="nav-cta"
          aria-label="Download resume PDF">
         &#x2193; Resume
@@ -61,8 +60,7 @@
     <a href="#projects" onclick="closeNav()">Projects</a>
     <a href="#services" onclick="closeNav()">Services</a>
     <a href="#contact"  onclick="closeNav()">Contact</a>
-    <a href="assets/resume.pdf"
-       download="Awais_Mumtaz_Resume.pdf"
+    <a href="resume.html"
        style="color:var(--accent);margin-top:16px"
        onclick="closeNav()">
       &#x2193; Download Resume
@@ -86,9 +84,11 @@
           </div>
           <div class="hero-photo-wrap">
             <img class="hero-photo"
+                 id="hero-photo"
                  src="assets/malikawais.png"
                  alt="Awais Mumtaz"
-                 onerror="this.parentElement.innerHTML='<div class=hero-fallback>&#x1F9D1;&#x200D;&#x1F4BB;</div>'" />
+                 onerror="this.style.display='none';document.getElementById('avatar-fallback').style.display='flex'" />
+            <div class="hero-fallback" id="avatar-fallback" style="display:none">AM</div>
           </div>
         </div>
       </div>
