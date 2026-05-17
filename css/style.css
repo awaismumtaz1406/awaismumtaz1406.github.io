@@ -5,8 +5,8 @@
 /* ── Design Tokens ─────────────────────────────────────────── */
 :root {
   /* Backgrounds */
-  --bg:          #f7f5f0;   /* warm parchment page */
-  --surface:     #ffffff;   /* card / nav surface  */
+  --bg:          #f0f6ff;   /* warm parchment page */
+  --surface:     #f4f4f569;   /* card / nav surface  */
   --surface2:    #f0ede7;   /* subtle tint         */
   --surface3:    #e5e1d8;   /* skill bar track     */
 
@@ -99,7 +99,7 @@ a:focus-visible {
    ════════════════════════════════════════════════════════════ */
 .nav {
   position: sticky; top: 0; z-index: 200;
-  background: rgba(247,245,240,.92);
+  background: rgba(240, 246, 255, .92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
