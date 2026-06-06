@@ -53,10 +53,6 @@
   /* ══════════════════════════════════════════════════════════
      HERO
      ══════════════════════════════════════════════════════════ */
-  $('hero-role').textContent = personal.role;
-  $('hero-bio').textContent  = personal.bio;
-
-  // Action buttons
   const acts = $('hero-actions');
 
   const dlBtn = mkA('btn btn-primary', resumeUrl, '&#x2193; View Resume', '_blank');
@@ -335,21 +331,6 @@
   });
 
   /* ══════════════════════════════════════════════════════════
-     CONTACT CTA
-     ══════════════════════════════════════════════════════════ */
-  const cl = $('cta-links');
-
-  cl.appendChild(mkA('btn btn-white', 'mailto:' + personal.contact.email, '&#x2709; ' + personal.contact.email));
-
-  personal.socials.forEach(s => {
-    cl.appendChild(mkA('btn btn-dark-out', s.url, s.label + ' &#x2192;', '_blank'));
-  });
-
-  const ctaResume = mkA('btn btn-dark-out', resumeUrl, '&#x2193; View Resume', '_blank');
-  ctaResume.setAttribute('aria-label', 'Open resume page');
-  cl.appendChild(ctaResume);
-
-  /* ══════════════════════════════════════════════════════════
      FOOTER
      ══════════════════════════════════════════════════════════ */
   $('footer-copy').textContent = '© ' + new Date().getFullYear() + ' ' + personal.name + ' · All rights reserved.';
@@ -374,6 +355,43 @@
   }
   window.addEventListener('scroll', animateBars, { passive: true });
   animateBars(); // run once on load in case skills are visible
+
+  /* ══════════════════════════════════════════════════════════
+     CONTACT FORM - Formspree Handler
+     ══════════════════════════════════════════════════════════ */
+  const form = $('contactForm');
+  const formStatus = $('formStatus');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      // Let Formspree handle submission
+      formStatus.className = 'form-status show';
+      formStatus.textContent = '⏳ Sending...';
+    });
+
+    // If Formspree redirects back (success)
+    window.addEventListener('load', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('success')) {
+        formStatus.className = 'form-status show success';
+        formStatus.textContent = '✓ Message sent successfully! I\'ll get back to you within 24 hours.';
+        form.reset();
+      }
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     CONTACT SOCIALS (in contact section)
+     ══════════════════════════════════════════════════════════ */
+  const contactSocialsDiv = $('contactSocials');
+  if (contactSocialsDiv) {
+    personal.socials.forEach(s => {
+      const a = mkA('', s.url, s.label, '_blank');
+      a.setAttribute('aria-label', s.label + ' profile');
+      a.setAttribute('title', s.label);
+      contactSocialsDiv.appendChild(a);
+    });
+  }
 
   /* ══════════════════════════════════════════════════════════
      SCROLL REVEAL (IntersectionObserver)

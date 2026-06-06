@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+<script>
+  emailjs.init('6nnNrKGMhYr3d2BqN');
+  
+  function testEmail() {
+    emailjs.send('service_portfolio', 'template_contact', {
+      to_email: 'awaismumtaz1406@gmail.com',
+      from_name: 'Test User',
+      from_email: 'test@example.com',
+      subject: 'Test Email',
+      message: 'This is a test message',
+      reply_to: 'test@example.com'
+    }).then(function() {
+      alert('✓ Test email sent! Check awaismumtaz1406@gmail.com');
+    }, function(error) {
+      alert('✗ Error: ' + JSON.stringify(error));
+    });
+  }
+</script>
+</head>
+<body>
+  <button onclick="testEmail()">Send Test Email</button>
+</body>
+</html>
