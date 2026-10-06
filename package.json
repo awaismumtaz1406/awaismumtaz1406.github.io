@@ -1,0 +1,14 @@
+{
+  "name": "awais-mumtaz-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'Static site, no build step required'",
+    "start": "node server.js",
+    "lint": "echo 'No lint configured'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

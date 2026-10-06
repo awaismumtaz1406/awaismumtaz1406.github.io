@@ -1,0 +1,8 @@
+{
+  "name": "Awais Mumtaz - Portfolio",
+  "description": "Awais Mumtaz - Software Engineering Student. Python, C++, Web Development.",
+  "requestFramePermissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
