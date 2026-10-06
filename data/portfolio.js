@@ -1,6 +1,6 @@
 // ============================================================
 // data/portfolio.js  —  Awais Mumtaz Developer Portfolio Data
-// Full-Stack Developer (React, Node.js, AI Integrations)
+// Full-Stack Developer (React, Node.js, AI & ML Integrations)
 // ============================================================
 
 const PORTFOLIO = {
@@ -9,12 +9,11 @@ const PORTFOLIO = {
   // ── Personal Info ──────────────────────────────────────────
   personal: {
     name:     'Awais Mumtaz',
-    handle:   'awais@dev',
     title:    'Full-Stack Developer',
-    roleTag:  'React · Node.js · AI Integrations',
-    tagline:  'Building responsive web applications, robust backend services, and practical AI tools.',
+    roleTag:  'React 19 · Node.js · AI & ML Integrations',
+    tagline:  'Building production web applications, robust backend services, and practical AI tools.',
     bio:      'I build responsive web applications, robust backend services, and practical AI-powered tools. Focused on writing clean, scalable code that solves real problems.',
-    avatar:   'assets/malikawais.png',
+    avatar:   'assets/profile.jpg',
     location: 'Lahore, Pakistan',
 
     contact: {
@@ -23,25 +22,23 @@ const PORTFOLIO = {
     },
 
     socials: [
-      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/awaismumtaz1406/', icon: 'linkedin' },
-      { label: 'GitHub',   url: 'https://github.com/awaismumtaz1406',           icon: 'github'   },
-      { label: 'Email',    url: 'mailto:awaismumtaz1406@gmail.com',             icon: 'mail'     },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/awaismumtaz1406/' },
+      { label: 'GitHub',   url: 'https://github.com/awaismumtaz1406'           },
+      { label: 'Email',    url: 'mailto:awaismumtaz1406@gmail.com'             },
     ],
   },
 
-  // ── Client Work & Satisfaction (Featured) ──────────────────
+  // ── Client Work & Satisfaction (Featured Deliverables) ─────
   clientWork: {
     title:       'Client Learning & Resource Hub',
     client:      'Waseem Raza',
-    clientRole:  'Tech Lead / Client',
-    clientLoc:   'USA',
+    clientRole:  'Tech Lead / US-Based Client',
     liveUrl:     'https://waseemraza844.github.io/portfolio/learning.html',
     period:      'Completed 2026',
-    command:     './view_client_project.sh --client waseem-raza',
     highlights: [
-      'Built a fast, responsive educational resource website with clean navigation.',
-      'Implemented organized modular course sections for self-paced technical learning.',
-      'Optimized layouts and load performance across mobile and desktop devices.',
+      'Engineered a responsive technical education portal with modular course paths and instant search navigation.',
+      'Built clean, reusable frontend components optimized for fast loading and cross-device readability.',
+      'Delivered clean code and cross-browser compatibility matching strict client specifications.',
     ],
     testimonial: {
       quote: 'Awais delivered a clean, fast, and well-structured site on time. Great communication and solid frontend execution.',
@@ -50,100 +47,74 @@ const PORTFOLIO = {
     },
   },
 
-  // ── Campus Ambassadorship (Balanced Leadership Highlight) ──
-  leadership: {
-    role:     'Devsinc Campus Ambassador (Devstranauts 3.0)',
-    period:   '2026 – 2027',
-    campus:   'University of Management and Technology (UMT), Lahore',
-    summary:  'Selected as the ambassador representing Devsinc at UMT Lahore, helping connect student developers with tech events and industry opportunities.',
-    image:    'assets/devsinc-event.jpg',
-    caption:  'Devstranauts 3.0 Launch Event at Devsinc HQ representing UMT Lahore.',
-  },
-
-  // ── Work Experience (Direct & Concise) ───────────────────────
-  experience: [
-    {
-      id:          'flyrank',
-      role:        'Frontend Developer Intern',
-      company:     'FlyRank AI',
-      period:      'Jun 2026 – Present',
-      type:        'Remote',
-      command:     'git log -n 1 --author "Awais"',
-      description: 'Developing user interfaces and reusable components using React and modern CSS.',
-    },
-    {
-      id:          'bigbrains',
-      role:        'Software Quality Engineer Intern',
-      company:     'Big Brains',
-      period:      'Aug 2026',
-      type:        'Remote',
-      command:     'pytest -v --suite qa_workflows',
-      description: 'Executed automated and manual test suites covering UI, authentication, and core workflows.',
-    },
-    {
-      id:          'datacrumbs',
-      role:        'ChangeMakers Ambassador',
-      company:     'DataCrumbs',
-      period:      'May 2026 – Present',
-      type:        'Remote',
-      command:     'datacrumbs --advocate',
-      description: 'Supported technical initiatives and community learning sessions.',
-    },
-  ],
-
-  // ── Flagship Projects (Only 2 strongest) ────────────────────
+  // ── Flagship Projects (3 High-Value Apps) ──────────────────
   projects: [
     {
       id:          'salesmatrix',
       title:       'SalesMatrix Studio',
-      period:      '2026',
-      badge:       'Full-Stack BI & AI',
-      command:     './launch_salesmatrix.sh',
-      description: 'BI analytics platform turning sales data into P&L statements, multi-dimensional charts, and AI-generated executive summaries.',
-      stack:       ['React 19', 'TypeScript', 'Tailwind', 'Node.js', 'Supabase', 'Gemini API'],
+      badge:       'Enterprise BI & AI',
+      tags:        ['React 19', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Supabase', 'Gemini API'],
+      description: 'Enterprise business intelligence dashboard converting raw transaction data into executive P&L views, dynamic pivot tables, and AI-driven financial briefings.',
       live:        'https://sales-matrix-d6vfs6wuo-awais-mumtaz.vercel.app/',
       github:      'https://github.com/awaismumtaz1406/SalesMatrix',
     },
     {
       id:          'studysync-ai',
       title:       'StudySync AI',
-      period:      '2026',
-      badge:       'Smart Academic Assistant',
-      command:     'python3 -m studysync.agent',
-      description: 'Smart academic assistant with slide-search RAG, natural task scheduling, and automated deadline reminders.',
-      stack:       ['React', 'Node.js', 'Express', 'Supabase pgvector', 'Gemini API'],
+      badge:       'Academic Copilot & Slide RAG',
+      tags:        ['React', 'Node.js', 'Express', 'Supabase pgvector', 'Gemini API'],
+      description: 'Bilingual (Roman Urdu/English) academic assistant featuring lecture slide RAG with vector search, automated task scheduling, and deadline alerts.',
       live:        'https://study-sync-ai-je9e.vercel.app/',
       github:      'https://github.com/awaismumtaz1406/StudySync-Ai',
     },
+    {
+      id:          'churn-prediction',
+      title:       'Customer Churn Prediction System',
+      badge:       'Machine Learning Analytics',
+      tags:        ['Machine Learning', 'Python', 'React', 'Scikit-Learn', 'REST API', 'Vercel'],
+      description: 'End-to-end predictive analytics web app assessing customer attrition risk using trained classification algorithms. Features interactive real-time parameter tuning, churn probability scoring, and key risk-factor visualizations.',
+      live:        'https://customer-churn-prediction-system-4lmui69xf-awais-mumtaz.vercel.app/',
+      github:      'https://github.com/awaismumtaz1406/customer-churn-prediction-System',
+    },
   ],
 
-  // ── Technical Skills ───────────────────────────────────────
-  skills: [
+  // ── Work Experience ────────────────────────────────────────
+  experience: [
     {
-      category: 'Frontend',
-      items: ['React 19', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 / Modern CSS'],
+      role:        'Frontend Developer Intern',
+      company:     'FlyRank AI',
+      period:      'Jun 2026 – Present | Remote',
+      description: 'Building accessible, component-driven user interfaces in React.',
     },
     {
-      category: 'Backend & APIs',
-      items: ['Node.js', 'Express', 'Python', 'C++', 'RESTful APIs'],
+      role:        'Software Quality Engineer Intern',
+      company:     'Big Brains',
+      period:      'Aug 2026 | Remote',
+      description: 'Authored automated Selenium scripts and end-to-end QA validation suites.',
     },
     {
-      category: 'Databases & AI',
-      items: ['Supabase / PostgreSQL', 'pgvector / Vector Search', 'Google Gemini API', 'MySQL', 'SQLite'],
-    },
-    {
-      category: 'Tools & Testing',
-      items: ['Git & GitHub', 'Automated QA / Testing', 'Linux / Bash', 'VS Code', 'Vercel'],
+      role:        'ChangeMakers Ambassador',
+      company:     'DataCrumbs',
+      period:      'May 2026 – Present | Remote',
+      description: 'Facilitating technical workshops and hands-on developer sessions.',
     },
   ],
+
+  // ── Campus Ambassadorship (Leadership) ──────────────────────
+  leadership: {
+    role:        'Devsinc Campus Ambassador (Devstranauts 3.0)',
+    institution: 'University of Management and Technology (UMT), Lahore (2026 – 2027)',
+    detail:      'Official campus ambassador bridging UMT student engineering talent with Devsinc industry programs, hackathons, and corporate recruitment initiatives.',
+    image:       'assets/devsinc-ambassador.jpg',
+  },
 
   // ── Education & Certifications ─────────────────────────────
   education: [
     {
       institution: 'University of Management and Technology (UMT), Lahore',
-      degree:      'BS Software Engineering',
-      period:      '2024 – 2028',
-      details:     'Focused on software architecture, algorithms, and practical web/AI engineering.',
+      degree:      'Bachelor of Science in Software Engineering',
+      period:      '2024 – 2028 · In Progress',
+      detail:      'Focused on software architecture, algorithms, and practical web/AI engineering.',
     },
   ],
 

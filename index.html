@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Awais Mumtaz — Full-Stack Software Engineer. Building production web applications and intelligent AI systems with React 19, TypeScript, Node.js, and Google Gemini." />
+  <meta name="description" content="Awais Mumtaz — Full-Stack Software Engineer. Building production web applications, machine learning systems, and intelligent AI copilots with React 19, TypeScript, Python, Node.js, and Google Gemini." />
   <meta property="og:title" content="Awais Mumtaz — Full-Stack Software Engineer" />
-  <meta property="og:description" content="Portfolio of Awais Mumtaz. Production web applications, enterprise BI tools, and intelligent AI copilots." />
+  <meta property="og:description" content="Portfolio of Awais Mumtaz. Production web applications, machine learning platforms, and intelligent AI copilots." />
   <title>Awais Mumtaz — Full-Stack Software Engineer</title>
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
@@ -128,7 +128,7 @@
               <img src="assets/profile.jpg"
                    alt="Awais Mumtaz"
                    class="hero-profile-img"
-                   onerror="this.src='assets/malikawais.png'; this.onerror=function(){this.style.display='none';document.getElementById('profile-fallback').style.display='flex';};" />
+                   onerror="this.onerror=null; this.style.display='none'; document.getElementById('profile-fallback').style.display='flex';" />
               <div class="hero-photo-fallback" id="profile-fallback">AM</div>
             </div>
           </div>
@@ -191,14 +191,14 @@
 
     <hr class="divider" />
 
-    <!-- ── 3. FLAGSHIP PROJECTS (TWO HIGH-VALUE APPS) ── -->
+    <!-- ── 3. FLAGSHIP PROJECTS (THREE HIGH-VALUE APPS) ── -->
     <section id="projects" class="section">
       <div class="wrap">
         <div class="sec-header">
           <p class="sec-tag">Featured Engineering</p>
           <h2 class="sec-title">Flagship Projects</h2>
           <p class="sec-subtitle">
-            Curated selection of production-grade systems spanning enterprise business intelligence and AI copilots.
+            Curated selection of production-grade systems spanning enterprise business intelligence, machine learning analytics, and AI copilots.
           </p>
         </div>
 
@@ -268,6 +268,43 @@
                 Live Demo &#x2197;
               </a>
               <a href="https://github.com/awaismumtaz1406/StudySync-Ai"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn btn-outline">
+                GitHub Repo &#x2325;
+              </a>
+            </div>
+          </article>
+
+          <!-- Flagship Project 3: Customer Churn Prediction System -->
+          <article class="project-card">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">Customer Churn Prediction System</h3>
+              </div>
+
+              <p class="project-desc">
+                End-to-end predictive analytics web app assessing customer attrition risk using trained classification algorithms. Features interactive real-time parameter tuning, churn probability scoring, and key risk-factor visualizations.
+              </p>
+
+              <div class="project-tags-row">
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">Scikit-Learn</span>
+                <span class="project-tag">REST API</span>
+                <span class="project-tag">Vercel</span>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://customer-churn-prediction-system-4lmui69xf-awais-mumtaz.vercel.app/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn btn-primary">
+                Live Demo &#x2197;
+              </a>
+              <a href="https://github.com/awaismumtaz1406/customer-churn-prediction-System"
                  target="_blank"
                  rel="noopener noreferrer"
                  class="btn btn-outline">
@@ -345,14 +382,19 @@
                 </p>
               </div>
 
-              <div class="leadership-photo-box">
-                <img src="assets/devsinc-ambassador.jpg"
-                     alt="Devsinc Campus Ambassador Event"
-                     class="leadership-photo-img"
-                     onerror="this.src='assets/devsinc-event.jpg'; this.onerror=function(){this.style.display='none';document.getElementById('ambassador-fallback').style.display='flex';};" />
-                <div class="leadership-fallback-box" id="ambassador-fallback">
-                  <p style="font-weight: 700; color: var(--accent-sky); font-size: 15px;">Devstranauts 3.0</p>
-                  <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Devsinc &times; UMT Lahore</p>
+              <!-- Devsinc Leadership Image Container with Fallback -->
+              <div class="ambassador-media-wrap">
+                <img src="assets/devsinc-ambassador.jpeg" alt="Devsinc Campus Ambassador - Devstranauts 3.0" class="ambassador-img" onerror="this.onerror=null; this.src='assets/devsinc-ambassador.jpg';">
+                <div class="ambassador-badge-fallback">
+                  <svg class="fallback-insignia" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
+                    <path d="M32 10L42 32H22L32 10Z" fill="var(--accent-sky)" opacity="0.9"/>
+                    <path d="M22 36L14 46L24 44L28 36H22Z" fill="var(--accent-emerald)"/>
+                    <path d="M42 36L50 46L40 44L36 36H42Z" fill="var(--accent-emerald)"/>
+                    <circle cx="32" cy="24" r="4" fill="#0f172a"/>
+                  </svg>
+                  <p class="fallback-badge-title">DEVSTRANAUTS 3.0</p>
+                  <p class="fallback-badge-sub">Devsinc HQ &times; UMT Lahore</p>
                 </div>
               </div>
             </div>
@@ -392,18 +434,14 @@
           <div class="certs-card-wrap">
             <h3>Google Verified Certifications</h3>
             <div class="certs-list">
-              <!-- Cert 1 -->
+              <!-- Cert 1: AI for App Building -->
               <div class="cert-badge-card">
-                <div class="cert-icon-frame">
-                  <img src="assets/google-cert-building.png"
-                       alt="Google AI for App Building"
-                       class="cert-badge-img"
-                       onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                  <div class="cert-svg-fallback" style="display:none;" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                  </div>
+                <div class="cert-svg-badge" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#4285F4"/>
+                    <path d="M2 17l10 5 10-5" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12l10 5 10-5" stroke="#FBBC05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </div>
 
                 <div class="cert-details">
@@ -416,18 +454,14 @@
                 </div>
               </div>
 
-              <!-- Cert 2 -->
+              <!-- Cert 2: AI for App Deployment -->
               <div class="cert-badge-card">
-                <div class="cert-icon-frame">
-                  <img src="assets/google-cert-deployment.png"
-                       alt="Google AI for App Deployment"
-                       class="cert-badge-img"
-                       onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-                  <div class="cert-svg-fallback" style="display:none;" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
-                    </svg>
-                  </div>
+                <div class="cert-svg-badge" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="#4285F4" opacity="0.3"/>
+                    <path d="M12 9v6m0 0l-2.5-2.5M12 15l2.5-2.5" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" stroke="#38bdf8" stroke-width="1.5"/>
+                  </svg>
                 </div>
 
                 <div class="cert-details">
@@ -453,7 +487,7 @@
         <div class="contact-banner-card">
           <h2>Let&#39;s Build Something Impactful</h2>
           <p>
-            Currently open to full-stack, frontend engineering, and contract roles. Whether you have a project in mind or want to connect, my inbox is open.
+            Currently open to full-stack, frontend engineering, and machine learning roles. Whether you have a project in mind or want to connect, my inbox is open.
           </p>
           <div class="contact-social-bar">
             <a href="mailto:awaismumtaz1406@gmail.com" class="btn btn-primary btn-lg">
