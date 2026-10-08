@@ -24,6 +24,7 @@ const PORTFOLIO = {
     socials: [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/awaismumtaz1406/' },
       { label: 'GitHub',   url: 'https://github.com/awaismumtaz1406'           },
+      { label: 'WhatsApp', url: 'https://wa.me/923288421580?text=Hi%20Awais,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!' },
       { label: 'Email',    url: 'mailto:awaismumtaz1406@gmail.com'             },
     ],
   },
