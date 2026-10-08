@@ -32,10 +32,95 @@
   window.closeNav = closeMenu;
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileNav?.classList.contains('open')) {
-      closeMenu();
+    if (e.key === 'Escape') {
+      if (certModal?.classList.contains('open')) {
+        closeCertModal();
+      }
+      if (mobileNav?.classList.contains('open')) {
+        closeMenu();
+      }
     }
   });
+
+  // ══════════════════════════════════════════════════════════════
+  // Interactive Certificate Modal / Lightbox Viewer
+  // ══════════════════════════════════════════════════════════════
+  const certModal = document.getElementById('certModal');
+  const certModalBackdrop = document.getElementById('certModalBackdrop');
+  const certModalClose = document.getElementById('certModalClose');
+  const certModalDismiss = document.getElementById('certModalDismiss');
+  const modalCertTitle = document.getElementById('modalCertTitle');
+  const modalCertId = document.getElementById('modalCertId');
+  const modalCertDate = document.getElementById('modalCertDate');
+  const modalCertImg = document.getElementById('modalCertImg');
+  const modalCertFallback = document.getElementById('modalCertFallback');
+  const modalLoadingSpinner = document.getElementById('modalLoadingSpinner');
+  const fallbackTitle = document.getElementById('fallbackTitle');
+  const fallbackId = document.getElementById('fallbackId');
+  const modalDocLink = document.getElementById('modalDocLink');
+  const viewCertButtons = document.querySelectorAll('.btn-view-cert');
+
+  function openCertModal(btn) {
+    if (!certModal) return;
+
+    const title = btn.getAttribute('data-cert-title') || 'Google Verified Certificate';
+    const certId = btn.getAttribute('data-cert-id') || '';
+    const imgSrc = btn.getAttribute('data-cert-img') || '';
+    const date = btn.getAttribute('data-cert-date') || 'Issued Oct 2026';
+
+    if (modalCertTitle) modalCertTitle.textContent = title;
+    if (modalCertId) modalCertId.textContent = certId;
+    if (modalCertDate) modalCertDate.textContent = date;
+    if (fallbackTitle) fallbackTitle.textContent = title;
+    if (fallbackId) fallbackId.textContent = certId;
+    if (modalDocLink) modalDocLink.href = imgSrc;
+
+    // Reset visual state
+    if (modalCertImg) modalCertImg.style.display = 'none';
+    if (modalCertFallback) modalCertFallback.style.display = 'none';
+    if (modalLoadingSpinner) modalLoadingSpinner.style.display = 'flex';
+
+    if (modalCertImg) {
+      modalCertImg.onload = function () {
+        if (modalLoadingSpinner) modalLoadingSpinner.style.display = 'none';
+        modalCertImg.style.display = 'block';
+        if (modalCertFallback) modalCertFallback.style.display = 'none';
+      };
+
+      modalCertImg.onerror = function () {
+        if (modalLoadingSpinner) modalLoadingSpinner.style.display = 'none';
+        modalCertImg.style.display = 'none';
+        if (modalCertFallback) modalCertFallback.style.display = 'flex';
+      };
+
+      modalCertImg.src = imgSrc;
+    }
+
+    certModal.classList.add('open');
+    certModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    certModalClose?.focus();
+  }
+
+  function closeCertModal() {
+    if (!certModal) return;
+    certModal.classList.remove('open');
+    certModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (modalCertImg) {
+      modalCertImg.onload = null;
+      modalCertImg.onerror = null;
+      modalCertImg.src = '';
+    }
+  }
+
+  viewCertButtons.forEach((btn) => {
+    btn.addEventListener('click', () => openCertModal(btn));
+  });
+
+  if (certModalClose) certModalClose.addEventListener('click', closeCertModal);
+  if (certModalDismiss) certModalDismiss.addEventListener('click', closeCertModal);
+  if (certModalBackdrop) certModalBackdrop.addEventListener('click', closeCertModal);
 
   // Active navigation link tracking on scroll
   const sections = document.querySelectorAll('section[id]');

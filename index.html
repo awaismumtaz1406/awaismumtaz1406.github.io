@@ -451,6 +451,24 @@
                   </div>
                   <p class="cert-id">Credential ID: <strong>XM6Z75V7J34J</strong></p>
                   <p class="cert-date">Issued Oct 2026 &middot; Google</p>
+
+                  <div class="cert-action-row">
+                    <button type="button"
+                            class="btn-view-cert"
+                            data-cert-title="AI for App Building"
+                            data-cert-id="XM6Z75V7J34J"
+                            data-cert-img="assets/google-cert-building.png"
+                            data-cert-date="Issued Oct 2026"
+                            data-cert-issuer="Google Cloud"
+                            aria-label="View AI for App Building Certificate">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      <span>&#x2197; View Certificate</span>
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -471,6 +489,24 @@
                   </div>
                   <p class="cert-id">Credential ID: <strong>BO37C0OKD2CL</strong></p>
                   <p class="cert-date">Issued Oct 2026 &middot; Google</p>
+
+                  <div class="cert-action-row">
+                    <button type="button"
+                            class="btn-view-cert"
+                            data-cert-title="AI for App Deployment"
+                            data-cert-id="BO37C0OKD2CL"
+                            data-cert-img="assets/google-cert-deployment.png"
+                            data-cert-date="Issued Oct 2026"
+                            data-cert-issuer="Google Cloud"
+                            aria-label="View AI for App Deployment Certificate">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      <span>&#x2197; View Certificate</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -524,6 +560,81 @@
       </div>
     </div>
   </footer>
+
+  <!-- ═══════════════════════════ CERTIFICATE LIGHTBOX MODAL ═══════════════════════════ -->
+  <div id="certModal" class="cert-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalCertTitle">
+    <div class="cert-modal-backdrop" id="certModalBackdrop"></div>
+    <div class="cert-modal-dialog">
+      <button class="cert-modal-close" id="certModalClose" aria-label="Close Certificate Preview">&times;</button>
+      
+      <div class="cert-modal-header">
+        <div class="cert-modal-badge-tag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#4285F4"/>
+            <path d="M2 17l10 5 10-5" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12l10 5 10-5" stroke="#FBBC05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Google Verified Credential</span>
+        </div>
+        <h3 id="modalCertTitle" class="cert-modal-title">AI for App Building</h3>
+        <p class="cert-modal-id-line">
+          Credential ID: <strong id="modalCertId" class="cert-modal-id-code">XM6Z75V7J34J</strong>
+          <span class="cert-modal-sep">&bull;</span>
+          <span class="cert-modal-date" id="modalCertDate">Issued Oct 2026</span>
+        </p>
+      </div>
+
+      <div class="cert-modal-body">
+        <div class="cert-modal-preview-wrap">
+          <!-- Loading Spinner Indicator -->
+          <div id="modalLoadingSpinner" class="modal-loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <span>Loading certificate...</span>
+          </div>
+
+          <!-- Certificate Image Preview -->
+          <img id="modalCertImg"
+               src=""
+               alt="Google Certificate Preview"
+               class="cert-modal-img" />
+
+          <!-- Robust Fallback Box if image is loading or fails -->
+          <div id="modalCertFallback" class="cert-modal-fallback" style="display: none;">
+            <div class="modal-fallback-seal">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 2"/>
+                <path d="M12 4L4 8l8 4 8-4-8-4z" fill="#4285F4"/>
+                <path d="M4 14l8 4 8-4" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 11l2 2 4-4" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="fallback-verified-pill">&#x2713; Google Verified Credential</div>
+            <h4 id="fallbackTitle" class="fallback-cert-name">AI for App Building</h4>
+            <p class="fallback-id-text">
+              Credential ID: <code id="fallbackId">XM6Z75V7J34J</code>
+            </p>
+            <p class="fallback-issuer-text">
+              Issued to <strong>Awais Mumtaz</strong> &bull; Google Cloud
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-modal-footer">
+        <a id="modalDocLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary modal-action-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span>Open Full Document</span>
+        </a>
+        <button type="button" class="btn btn-outline modal-cancel-btn" id="certModalDismiss">
+          Close Preview
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Minimal Vanilla JavaScript -->
   <script src="js/main.js"></script>
