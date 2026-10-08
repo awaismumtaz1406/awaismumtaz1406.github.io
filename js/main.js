@@ -43,7 +43,7 @@
   });
 
   // ══════════════════════════════════════════════════════════════
-  // Interactive Certificate Modal / Lightbox Viewer
+  // Interactive Certificate / Document Modal Viewer
   // ══════════════════════════════════════════════════════════════
   const certModal = document.getElementById('certModal');
   const certModalBackdrop = document.getElementById('certModalBackdrop');
@@ -51,49 +51,50 @@
   const certModalDismiss = document.getElementById('certModalDismiss');
   const modalCertTitle = document.getElementById('modalCertTitle');
   const modalCertId = document.getElementById('modalCertId');
+  const modalCertIdWrap = document.getElementById('modalCertIdWrap');
   const modalCertDate = document.getElementById('modalCertDate');
-  const modalCertImg = document.getElementById('modalCertImg');
-  const modalCertFallback = document.getElementById('modalCertFallback');
-  const modalLoadingSpinner = document.getElementById('modalLoadingSpinner');
-  const fallbackTitle = document.getElementById('fallbackTitle');
-  const fallbackId = document.getElementById('fallbackId');
+  const modalIssuerLabel = document.getElementById('modalIssuerLabel');
+  const modalViewerContainer = document.getElementById('modalViewerContainer');
   const modalDocLink = document.getElementById('modalDocLink');
+  const modalDocLinkTop = document.getElementById('modalDocLinkTop');
   const viewCertButtons = document.querySelectorAll('.btn-view-cert');
 
   function openCertModal(btn) {
     if (!certModal) return;
 
-    const title = btn.getAttribute('data-cert-title') || 'Google Verified Certificate';
+    const title = btn.getAttribute('data-cert-title') || 'Verified Credential';
     const certId = btn.getAttribute('data-cert-id') || '';
-    const imgSrc = btn.getAttribute('data-cert-img') || '';
-    const date = btn.getAttribute('data-cert-date') || 'Issued Oct 2026';
+    const assetPath = btn.getAttribute('data-cert-img') || '';
+    const date = btn.getAttribute('data-cert-date') || '';
+    const issuer = btn.getAttribute('data-cert-issuer') || 'Verified Credential';
 
     if (modalCertTitle) modalCertTitle.textContent = title;
-    if (modalCertId) modalCertId.textContent = certId;
-    if (modalCertDate) modalCertDate.textContent = date;
-    if (fallbackTitle) fallbackTitle.textContent = title;
-    if (fallbackId) fallbackId.textContent = certId;
-    if (modalDocLink) modalDocLink.href = imgSrc;
+    if (modalIssuerLabel) modalIssuerLabel.textContent = issuer;
 
-    // Reset visual state
-    if (modalCertImg) modalCertImg.style.display = 'none';
-    if (modalCertFallback) modalCertFallback.style.display = 'none';
-    if (modalLoadingSpinner) modalLoadingSpinner.style.display = 'flex';
+    if (modalCertId && modalCertIdWrap) {
+      if (certId) {
+        modalCertId.textContent = certId;
+        modalCertIdWrap.style.display = 'inline';
+      } else {
+        modalCertIdWrap.style.display = 'none';
+      }
+    }
 
-    if (modalCertImg) {
-      modalCertImg.onload = function () {
-        if (modalLoadingSpinner) modalLoadingSpinner.style.display = 'none';
-        modalCertImg.style.display = 'block';
-        if (modalCertFallback) modalCertFallback.style.display = 'none';
-      };
+    if (modalCertDate) {
+      modalCertDate.textContent = date;
+    }
 
-      modalCertImg.onerror = function () {
-        if (modalLoadingSpinner) modalLoadingSpinner.style.display = 'none';
-        modalCertImg.style.display = 'none';
-        if (modalCertFallback) modalCertFallback.style.display = 'flex';
-      };
+    if (modalDocLink) modalDocLink.href = assetPath;
+    if (modalDocLinkTop) modalDocLinkTop.href = assetPath;
 
-      modalCertImg.src = imgSrc;
+    // Render genuine asset: iframe for PDF, img for PNG/JPG
+    if (modalViewerContainer) {
+      const isPdf = assetPath.toLowerCase().endsWith('.pdf');
+      if (isPdf) {
+        modalViewerContainer.innerHTML = `<iframe src="${assetPath}" class="modal-cert-viewer" style="width: 100%; height: 500px; border: none; border-radius: 8px;"></iframe>`;
+      } else {
+        modalViewerContainer.innerHTML = `<img src="${assetPath}" alt="Verified Credential" class="modal-cert-viewer" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 8px;">`;
+      }
     }
 
     certModal.classList.add('open');
@@ -107,10 +108,8 @@
     certModal.classList.remove('open');
     certModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    if (modalCertImg) {
-      modalCertImg.onload = null;
-      modalCertImg.onerror = null;
-      modalCertImg.src = '';
+    if (modalViewerContainer) {
+      modalViewerContainer.innerHTML = '';
     }
   }
 

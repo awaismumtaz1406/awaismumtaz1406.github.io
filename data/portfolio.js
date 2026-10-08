@@ -82,22 +82,26 @@ const PORTFOLIO = {
   // ── Work Experience ────────────────────────────────────────
   experience: [
     {
-      role:        'Frontend Developer Intern',
-      company:     'FlyRank AI',
-      period:      'Jun 2026 – Present | Remote',
-      description: 'Building accessible, component-driven user interfaces in React.',
-    },
-    {
       role:        'Software Quality Engineer Intern',
       company:     'Big Brains',
-      period:      'Aug 2026 | Remote',
-      description: 'Authored automated Selenium scripts and end-to-end QA validation suites.',
+      period:      'Aug 2026 – Sep 2026 (1 Month) | Remote / Lahore',
+      description: 'Designed and executed Alpha, Beta, and functional test suites across production web applications. Authored automated Selenium testing scripts.',
+      certificate: 'assets/cert-bigbrains-sqa.png',
+      recommendation: 'assets/recommendation-letter-bigbrains.png',
     },
     {
-      role:        'ChangeMakers Ambassador',
+      role:        'Mobile App Testing Intern',
+      company:     'CodeWingz',
+      period:      'Jul 2026 – Aug 2026 (1 Month) | Lahore',
+      description: 'Conducted manual mobile application testing, UI responsiveness audits, and usability test cases. Identified and logged critical functional bugs.',
+      certificate: 'assets/cert-codewingz-testing.pdf',
+    },
+    {
+      role:        'ChangeMakers Ambassador & Intern',
       company:     'DataCrumbs',
-      period:      'May 2026 – Present | Remote',
-      description: 'Facilitating technical workshops and hands-on developer sessions.',
+      period:      'May 2026 – Jul 2026 (3 Months) | Remote',
+      description: 'Selected for the 3-Month ChangeMakers leadership and technical development track. Facilitated technical workshops and developer community projects.',
+      certificate: 'assets/cert-datacrumbs.pdf',
     },
   ],
 
