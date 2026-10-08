@@ -6,6 +6,41 @@
 (function () {
   'use strict';
 
+  // ══════════════════════════════════════════════════════════════
+  // Interactive Light / Dark Mode Toggle
+  // ══════════════════════════════════════════════════════════════
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+
+  function getSavedTheme() {
+    return localStorage.getItem('portfolio-theme') || 'dark';
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (themeIcon) themeIcon.textContent = '🌙';
+      if (themeToggle) themeToggle.setAttribute('title', 'Switch to dark mode');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (themeIcon) themeIcon.textContent = '☀️';
+      if (themeToggle) themeToggle.setAttribute('title', 'Switch to light mode');
+    }
+  }
+
+  // Initialize theme on script run
+  const initialTheme = getSavedTheme();
+  applyTheme(initialTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('portfolio-theme', newTheme);
+      applyTheme(newTheme);
+    });
+  }
+
   // Mobile navigation drawer toggle
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
@@ -121,25 +156,41 @@
   if (certModalDismiss) certModalDismiss.addEventListener('click', closeCertModal);
   if (certModalBackdrop) certModalBackdrop.addEventListener('click', closeCertModal);
 
-  // Active navigation link tracking on scroll
+  // Active navigation link tracking on scroll (Smooth ScrollSpy)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY + 100;
+  function updateActiveNavLink() {
+    const scrollY = window.scrollY + 120;
+    let currentId = '';
+
     sections.forEach((sec) => {
       const top = sec.offsetTop;
       const height = sec.offsetHeight;
       const id = sec.getAttribute('id');
       if (scrollY >= top && scrollY < top + height) {
-        navLinks.forEach((link) => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
-        });
+        currentId = id;
       }
     });
-  }, { passive: true });
+
+    // Special check if reached bottom of page
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+      currentId = 'contact';
+    }
+
+    if (currentId) {
+      navLinks.forEach((link) => {
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+  window.addEventListener('DOMContentLoaded', updateActiveNavLink);
+  updateActiveNavLink();
 
 })();
