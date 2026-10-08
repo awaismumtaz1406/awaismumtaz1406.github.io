@@ -91,9 +91,9 @@
     if (modalViewerContainer) {
       const isPdf = assetPath.toLowerCase().endsWith('.pdf');
       if (isPdf) {
-        modalViewerContainer.innerHTML = `<iframe src="${assetPath}" class="modal-cert-viewer" style="width: 100%; height: 500px; border: none; border-radius: 8px;"></iframe>`;
+        modalViewerContainer.innerHTML = `<iframe src="${assetPath}#toolbar=0" class="modal-cert-viewer" style="width: 100%; height: 540px; border: none; border-radius: 8px;"></iframe>`;
       } else {
-        modalViewerContainer.innerHTML = `<img src="${assetPath}" alt="Verified Credential" class="modal-cert-viewer" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 8px;">`;
+        modalViewerContainer.innerHTML = `<img src="${assetPath}" alt="Verified Credential" class="modal-cert-viewer" style="width: 100%; max-height: 540px; object-fit: contain; border-radius: 8px;">`;
       }
     }
 

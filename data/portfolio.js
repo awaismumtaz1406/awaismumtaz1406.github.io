@@ -129,12 +129,21 @@ const PORTFOLIO = {
       title:  'AI for App Building',
       issuer: 'Google',
       date:   'Oct 2026',
+      file:   'assets/google-cert-building.pdf',
     },
     {
       id:     'BO37C0OKD2CL',
       title:  'AI for App Deployment',
       issuer: 'Google',
       date:   'Oct 2026',
+      file:   'assets/google-cert-deployment.pdf',
+    },
+    {
+      id:     'Verified Google Credential',
+      title:  'AI Fundamentals',
+      issuer: 'Google',
+      date:   '2026',
+      file:   'assets/google-cert-ai-fundamentals.pdf',
     },
   ],
 };
