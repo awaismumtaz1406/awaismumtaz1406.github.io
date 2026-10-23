@@ -1,35 +1,55 @@
-name: Deploy Portfolio
+name: Deploy Portfolio to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:  # <--- THIS creates the manual "Run workflow" button!
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+# REQUIRED: These permissions allow GitHub Actions to securely deploy to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js (if using Vite/React)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
+          cache: 'npm'
 
-      # Uncomment below if you use npm build (like React/Vite)
-      # - name: Install and Build
-      #   run: |
-      #     npm install
-      #     npm run build
+      - name: Install Dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f bun.lock ]; then
+            npm install -g bun && bun install
+          else
+            npm install
+          fi
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Build Production Assets (Vite)
+        run: npm run build
 
-      - name: Upload artifact
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # Change to './dist' if using Vite/React build output
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
