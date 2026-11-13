@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <a
-              href="resume.pdf"
+              href="/resume.pdf"
               className="btn btn-primary"
               download
               aria-label="Download Resume PDF"
@@ -174,7 +174,7 @@ export const Header: React.FC<HeaderProps> = ({
         </a>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '16px' }}>
           <a
-            href="resume.pdf"
+            href="/resume.pdf"
             download
             className="btn btn-primary"
             onClick={closeMobileMenu}

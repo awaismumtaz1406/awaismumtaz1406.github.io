@@ -41,7 +41,8 @@ Modern, high-performance portfolio application built with React 19, TypeScript, 
 │       ├── FloatingWhatsApp.tsx # Floating contact shortcut with pulse animation
 │       └── CertModal.tsx      # Lightbox modal for viewing PDF & image certificates
 ├── assets/                    # Certificates, recommendation letters & profile photos
-└── resume.pdf                 # Resume PDF for direct download
+└── public/
+    └── resume.pdf             # Resume PDF served at /resume.pdf for direct download
 ```
 
 ---

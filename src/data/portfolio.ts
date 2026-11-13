@@ -1,7 +1,7 @@
 import { PortfolioData } from '../types';
 
 export const PORTFOLIO: PortfolioData = {
-  resumeUrl: 'resume.pdf',
+  resumeUrl: '/resume.pdf',
 
   // ── Personal Info ──────────────────────────────────────────
   personal: {
